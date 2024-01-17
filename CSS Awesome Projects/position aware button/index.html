@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direction Aware Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+    <button class="btn">Click Here!</button>
+    </div>
+    <script>
+        const btn = document.querySelector('.btn')
+        console.log(btn.getBoundingClientRect());
+        btn.addEventListener('click',(event)=>{
+            //Get the mouse coordinates
+            let mousePosX = event.clientX - event.target.offsetLeft
+            let mousePosY = event.clientY - event.target.offsetTop
+
+            let ripples = document.createElement('span')
+            ripples.style.left = `${mousePosX}px`
+            ripples.style.top = `${mousePosY}px`  //the ripple effect will start from the place where the mouse is clicked upon.
+
+            btn.appendChild(ripples)
+
+            // setTimeout(() => {
+            //     ripples.remove()
+            // }, 1000);
+
+        })
+    </script>
+</body>
+</html>

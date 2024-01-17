@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Progress Bar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        *,*::before,*::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            font-family: 'Montserrat';
+            flex-direction: column;
+        }
+        h2{
+            margin-bottom: 20px;
+        }
+        .progress-bar{
+            position: relative;
+            width: 500px;
+            height: 3em; /*so that it scales acc. to the font size of its inside element. */
+            background-color: rgb(31, 26, 26);
+            border-radius: 1.5em;
+        }
+        .progress-bar::before{
+            content: attr(data-label);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: .5em;
+            top: .5em;
+            bottom: .5em;
+            padding: 1em;
+            border-radius: 1em;
+            background:repeating-linear-gradient(-45deg, #465298, #465298 10px, #3f4a89 10px, #3f4a89 20px, #465298 20px) top left;
+            width: calc(var(--width,0) * 1%);
+            min-width: 2rem;
+            max-width: calc(100% - 1em);
+            animation: fill 3s ease infinite alternate-reverse; /*watch webdev simplified tutorial for explanation */
+        }
+        @keyframes fill{
+            100%{
+                width: calc(100% - 1em);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Funky Progress Bar</h2>
+    <div class="progress-bar" style='--width:50' data-label='Loading....'></div>
+</body>
+</html>

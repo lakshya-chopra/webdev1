@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Checkbox</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            /* background: linear-gradient(to top, #209cff 100%, #68e0cf 200%)no-repeat; */
+            height:100vh;
+            width:100%;
+        }
+        .wrapper{
+            font-family: 'Poppins';
+            text-align: center;
+        }
+        .container{
+            margin:auto;
+            font-size: 1.5rem;
+            height:200px;
+            width: 400px;
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 1px solid black;
+            /* display: flex; */
+        }
+        .container label{
+            display: block;
+            margin-top: 25px;
+            color: #4c4c4c;
+            font-weight: 600;
+        }
+        .container input[type='checkbox']{
+            margin-top: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            height:80px;
+            width:80px;
+            background-color:#d5d5d5;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #checkbox:hover{
+            background-color: #a5a5a5;
+        }
+        #checkbox:checked{
+            background-color: #5bcd3e;
+        }
+        #checkbox:after{
+            content: '';
+            border: solid #fff;
+            border-width: 0 10px 10px 0;
+            margin-left: 47%;
+            /* height: 80px; */
+            position: absolute;
+            top: 68px;
+            right: 180px;
+            left: -4px;
+            bottom: 72px;
+            transform: rotate(45deg);
+            display: none; /*display needs to be none because then there would be no element so animation wont' start, when element's display becomes block , animation would start as element forms */
+            /* animation: checkmark 1s ease 1; */
+        }
+        /* @keyframes checkmark { 
+            0%{
+                top: 68px;
+                left: -4px;
+                bottom: 120px;   
+            }
+            100%{
+                top: 68px;
+            left: -4px;
+            bottom: 72px;
+            }
+        } */
+
+        /* #checkbox:checked{
+            outline: 2px solid #497BE8;
+        } */
+        #checkbox:checked:after{
+            display: block;  /*Checked is used to toggle the effects.*/
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Custom Checkbox</h1>
+        <div class="container">
+        <label for="checkbox">Click Below!</label>
+        <input type="checkbox" id='checkbox'>
+        </div>
+    </div>
+</body>
+</html>

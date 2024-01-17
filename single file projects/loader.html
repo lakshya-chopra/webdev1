@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader CSS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%; /*still wont give ful width because browser by default gives some margin and padding to the elements inside the body, therefore we need to reset browser values.*/
+            background-color: #000;
+        }
+        .loader{
+            width: 80px;
+            height: 80px;
+            border: 8px solid #fff;
+            border-top: 8px solid rgb(255,0,85);
+            border-left: 8px solid rgb(0,255,179);
+            border-bottom: 8px solid rgb(255,0,85);
+            border-right: 8px solid rgb(0,255,179);
+            border-radius: 50%;
+            animation: loading 1s ease infinite;
+            box-shadow: 0 0 20px rgb(255,0,85), 0 0 20px rgb(0,255,179);
+        }
+        @keyframes loading{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="loader"></div>
+    </div>
+</body>
+</html>

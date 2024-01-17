@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World!</title>
+    <link rel="stylesheet" type="text/css" href="root-style.css">
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+
+</head>
+<body>
+
+    <div class = 'main'>
+        <header>Here are the links to some really basic CSS projects in this repo
+            <p style="margin-top:10px;font-size: 10px;">Author: Lakshya Chopra</p>
+        </header>
+
+            <section class="card-layout">
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\Calendar\index.html" class='card-title'>
+                            Calendar
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\Snake Game\index.html" class='card-title'>
+                            Snake Game
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\Step Progress Indicator\index.html" class='card-title'>
+                            Step Progress Indicator
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\3D Rotation\index.html" class='card-title'>
+                            3D Rotation
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\Show\Hide Password\index.html" class='card-title'>
+                            Show/Hide Password
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\Awesome Sidebar\index.html" class='card-title'>
+                            Awesome Sidebar
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\Neumorphic Checkboxes\index.html" class='card-title'>
+                            Neumorphic Checkboxes
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\CSS Awesome Projects\Email Subscription Box UI\index.html" class='card-title'>
+                            Email Subscription Box UI
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+                <div class='card'>
+                    <article class="card-link">
+                        <a href=".\single file projects\typing_effect.html" class='card-title'>
+                            Typing Effect
+                        </a>
+
+                     </article>
+                
+
+            </div>
+
+                          <div class='card'>
+                    <article class="card-link">
+                        <a href=".\single file projects\pulse_animation.html" class='card-title'>
+                            Pulse Animation
+                        </a>
+
+                     </article>
+                 </div>
+
+        </section>
+    
+    </div>
+
+<!--SVG credit to: https://css-tricks.com/hearts-in-html-and-css-->
+    <svg class="heart" viewBox="0 0 32 29.6">
+  <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+    c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+</svg> 
+
+
+<script>
+
+    /*This is the code to choose a random CSS border-color.*/
+    function getRandomColor() {
+        const colors = ['--cyan', '--orange', '--blue']
+        const randomIndex = Math.floor(Math.random() * colors.length)
+        return `var(${colors[randomIndex]})`
+      }
+
+     document.addEventListener('DOMContentLoaded', function() {
+      let cards = document.querySelectorAll('.card')
+      let heartIcon = document.querySelector('.heart')
+
+      console.log(cards)
+      console.log(heartIcon)
+
+      cards.forEach(card => {
+        card.style.setProperty('--random-color', getRandomColor())
+      });
+
+
+      cards.forEach(card=>{
+        let clonedHeartIcon = heartIcon.cloneNode(true)
+        card.appendChild(clonedHeartIcon)
+      
+
+    //     card.addEventListener('mouseenter', function () {
+    //   clonedHeartIcon.classList.remove('hidden')
+    // })
+
+    // card.addEventListener('mouseleave', function () {
+    //   clonedHeartIcon.classList.add('hidden')
+    // })
+
+
+    })
+
+    });
+
+</script>
+
+</body>
+</html>

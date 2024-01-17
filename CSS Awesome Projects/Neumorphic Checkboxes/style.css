@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-bg:#111;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display:flex;justify-content:center; align-items:center;
+    background:var(--primary-bg);
+}
+h2{
+    margin:20px;
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+}
+.checkboxes-group{
+    display:flex;justify-content:center; align-items:center;
+    flex-wrap: wrap;
+    max-width: 350px;
+    min-width: 350px;
+    background: var(--primary-bg);
+    padding: 20px 10px;
+    /* border: 5px solid;
+    border-image-slice: 1;
+    border-image: linear-gradient(180deg,transparent,#03e9f4) 1 round; */
+    border-radius: 10px;
+    /* box-shadow: 0 0 5px #03e9f4,
+    0 0 5px #03e9f4,
+    0 0 10px #03e9f4,
+    0 0 50px #03e9f4; */
+    box-shadow: 0 0 1px #03e9f4,
+    0 0 2px #03e9f4,
+    0 0 3px #03e9f4,
+    0 0 10px #03e9f4;
+}
+.checkboxes-group label{
+    flex-basis: 40%;
+    height: 70px;
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    margin:20px 15px;
+}
+.checkboxes-group label .icon-box{
+    inset: 0;
+    position: absolute;
+    display:flex;justify-content:center; align-items:center;
+    /* box-shadow: -2px -2px 5px rgba(255,255,255,1), 3px 3px 5px rgba(0,0,0,0.1); */
+    border-radius: 15px;
+    transition: all 0.25s ease;
+    background: #101010;
+    border: 3px solid hsl(0, 0%, 85%);
+
+}
+.checkboxes-group label i{
+    font-size:2rem;
+    /* color: #6a9bd8; */
+    color: hsl(0, 0%, 85%);
+}
+.checkboxes-group label input[type='checkbox']{
+    opacity: 0;
+}
+
+.checkboxes-group label input[type='checkbox']:checked ~ .icon-box{
+    /* box-shadow: inset -2px -2px 5px rgba(255,255,255,1), inset 3px 3px 5px rgba(0,0,0,0.1); */
+    box-shadow: 0 0 10px rgba(33,156,243,0.5),0 0 20px rgba(33,156,243,0.5),0 0 30px rgba(33,156,243,0.5), 
+    inset 0 0 10px rgba(33,156,243,1);
+}

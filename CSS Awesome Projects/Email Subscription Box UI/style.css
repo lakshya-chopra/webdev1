@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: 'Poppins',Arial, Helvetica, sans-serif;
+    background: #ff4d4f;
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+}
+.container .top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1414b8;
+    height: 140px;
+    color: #fff;
+    font-size: 4.25rem;
+    border-radius: 12px 12px 0 0;
+    position: relative;
+}
+.container .top::before{
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: #1414b8;
+    bottom: -10px;
+    transform: rotate(45deg);
+}
+.middle{
+    font-weight:550;
+    margin-top: 15px;
+}
+.input-box{
+    margin-top:10px;
+    width: 100%;
+}
+.input-box #email{
+    font-family: 'Poppins',Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    width: 75%;
+    transition: border-color 0.3s ease;
+}
+.input-box #email:focus{
+    border-color:  #8E49E8;
+}
+.input-box #subscribeBtn{
+    width: 75%;
+    outline: none;
+    border:none;
+    font-family:'Poppins',Arial, Helvetica, sans-serif;
+    height:2.5em;
+    font-size: 1rem;
+    border-radius: 25px;
+    background: #6665ee;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+.input-box #subscribeBtn:hover{
+    background-color: #1414b8;
+}
+
+.footer{
+    margin: 10px 0 20px 0;
+}

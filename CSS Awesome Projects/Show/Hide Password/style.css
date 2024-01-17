@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Poppins',Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#0a68e8,#5fa0fa);
+    height: 100vh;
+    width: 100%;
+
+    display:flex;
+    justify-content:center; 
+    align-items:center;;
+}
+.container{
+    height: 70px;
+    width: 320px;
+    background-color: #080808;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 20px 30px rgba(7, 55, 122, 0.5);
+}
+.passwordContainer{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+	overflow:hidden;
+}
+#password{
+    outline: none;
+    height: 100%;
+    width: 75%;
+    background: transparent;
+    border: none;
+    font-family: 'Poppins',Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color:#0a68e8;
+    margin:0 20px;
+    z-index: 2000;
+}
+
+.fa-eye-slash{
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    color: #0a68e8;
+    background: #fff;
+    padding: 7.5px;
+    border-radius: 50%;
+    z-index: 1001;
+    top: 50%;
+    right: -10px;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+.fa-eye{
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    color: #0a68e8;
+    background: #fff;
+    padding: 7.5px;
+    border-radius: 50%;
+    z-index: 1001;
+    top: 50%;
+    right: -10px;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+.background{
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    transform-origin: right;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    z-index:0;
+    border-radius:10px;
+    transition: all 0.5s ease;
+    transform: scaleX(0.0);
+}
+

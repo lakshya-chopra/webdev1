@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 0;
+  font-family: 'Poppins',sans-serif;
+  background: #1d1e22;
+  color: #ffffff;
+}
+.gauge-container{
+    display:flex;justify-content:center; align-items:center;
+}
+.gauge{
+    width: 64px;
+    height: 64px;
+    margin: 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    /* overflow: hidden; */
+    position: relative;
+}
+.gauge input[type='checkbox']{
+    position: absolute;
+    cursor: pointer;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.gauge .percent{
+    content: 'Percentage';
+    position: absolute;
+    top: -35%;
+    font-size: 0.4rem;
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+.gauge i{
+    position: absolute;
+    top: -20%;
+    transform: scaleY(0.0);
+    transform-origin: bottom;
+    transition: all 0.1s ease;
+    
+}
+.gauge input[type='checkbox']:hover ~ i{
+    transform: scaleY(1.0);
+}
+.gauge input[type='checkbox']:hover ~ .percent{
+    opacity: 1;
+}
+.gauge.pink{
+    color: #d051eb;
+    background: conic-gradient(#d051eb 0% 34%, #303238 34% 100%);
+
+}
+.gauge.teal{
+    color: #48c6d8;
+    background: conic-gradient(#48c6d8 0% 20%, #303238 20% 100%);
+
+}
+.gauge.white{
+    color: #ffffff;
+    background: conic-gradient(#ffffff 0% 18%, #303238 18% 100%);
+}
+.gauge-inner{
+    display:grid;
+    place-items: center;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    background: #1d1e22; /* this will cover the conic background of the gauge.*/
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            font-family: 'Poppins',Arial, Helvetica, sans-serif;
+        }
+        .post{
+            padding:30px;
+        }
+        .readMore{
+            padding: 10px;
+            margin-top:15px;
+            background-color: #ff0268;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Poppins',sans-serif;
+            cursor:pointer;
+        }
+
+        .more{
+            display: inline;
+            /* transition: all 0.3s ease; */
+        }
+        .hide{
+            display:none;
+            /* transition: all 3s ease; */
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="post">
+            <h1>Post 1</h1>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, neque nobis? Sequi distinctio possimus debitis numquam incidunt ex tenetur enim nobis quia consectetur obcaecati vero reprehenderit nihil, molestiae facere quidem, eum voluptate. Quae unde soluta maxime ea totam quas laudantium quaerat debitis doloremque cum ratione dolore, doloribus magni autem inventore recusandae animi? Doloremque mollitia voluptatum perspiciatis soluta quia, fugit eaque, dignissimos et similique minus eveniet excepturi? Repellat autem sunt, exercitationem ullam dolorum, ipsa, voluptates velit dolore facere animi beatae optio.</p>
+
+            <button class="readMore" onclick="showMore(this)">Read More</button>
+        </div>
+
+        <div class="post">
+            <h1>Post 2</h1>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, neque nobis? Sequi distinctio possimus debitis numquam incidunt ex tenetur enim nobis quia consectetur obcaecati vero reprehenderit nihil, molestiae facere quidem, eum voluptate. Quae unde soluta maxime ea totam quas laudantium quaerat debitis doloremque cum ratione dolore, doloribus magni autem inventore recusandae animi?</p>
+
+            <button class="readMore" onclick="showMore(this)">Read More</button>
+        </div>
+        <div class="post">
+            <h1>Post 3</h1>
+            <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, neque nobis? Sequi distinctio possimus debitis numquam incidunt ex tenetur enim nobis quia consectetur obcaecati vero reprehenderit nihil, molestiae facere quidem, eum voluptate. Quae unde soluta maxime ea totam quas laudantium quaerat debitis doloremque cum ratione dolore, doloribus magni autem inventore recusandae animi? Doloremque mollitia voluptatum perspiciatis soluta quia, fugit eaque, dignissimos et similique minus eveniet excepturi? Repellat autem sunt, exercitationem ullam dolorum, ipsa</p>
+
+            <button class="readMore" onclick="showMore(this)">Read More</button>
+        </div>
+    </section>
+
+    <script>
+        let buttons = document.getElementsByClassName('readMore')
+        let charLimit = 180        
+        let contents = document.querySelectorAll('.content')
+        let posts = document.querySelectorAll('.post')
+        // console.log(contents); //array
+
+        function insertAfter(referenceNode, newNode) {
+             referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+        }
+        //check here: https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
+
+        console.log(posts);
+
+        for(let j=0;j<posts.length;j++){
+            console.log(posts[j]);
+            insertAfter(posts[j],document.createElement('hr'))
+        }
+
+
+
+
+
+        contents.forEach(content=>{
+            if(content.textContent.length > charLimit){
+                let displayText = content.textContent.slice(0,charLimit)
+
+                let moreText = content.textContent.slice(charLimit)
+
+                // console.log(moreText);
+                content.innerHTML = `${displayText}<span class="dots">.........</span><span class='more hide'>${moreText}</span>'`
+            }
+        })
+
+        // for(let i = 0;i<buttons.length;i++){
+        //     buttons[i].onclick = showMore(buttons[i])
+        // }
+
+        function showMore(btn){
+            let post = btn.parentElement;
+            // console.log(post);
+            post.querySelector('.dots').classList.toggle('hide')
+            // console.log(post.querySelector('.more'));
+            post.querySelector('.more').classList.toggle('hide')
+            btn.textContent == "Read More" ? btn.textContent = "Read Less": btn.textContent = 'Read More'
+        }
+
+    </script>
+</body>
+</html>

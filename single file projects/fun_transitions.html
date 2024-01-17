@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Hover Effects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        ::root{
+            --currentCol: #ee6352;
+        }
+        body{
+            font-family: 'Poppins';
+        }
+        h1{
+            position: relative;
+            cursor: pointer;
+            display: inline-block; 
+            background: linear-gradient(to right,#0000ff,#ff0000);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h1::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #ee6352;
+            top:2.5px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: scaleY(0.15);
+            transform-origin: bottom;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        h1:hover::after{
+            transform: scaleY(0.3);
+        }
+        .fancy-link{
+            position: relative;
+            text-decoration: none;
+            color: #ee6352;
+            font-size: 1.5rem;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .fancy-link::after{
+            content:"";
+            position: absolute;
+            border-bottom: 3px solid #ee6352;
+            width: 100%;
+            left: 37.5%;
+            top: 79%;
+            transform: scaleX(0.0);
+            transform-origin: left;
+            transition: all 0.3s ease;
+
+        }
+        .fancy-link:hover::after{
+            transform: scaleX(0.25);
+        } /*we first make an underline using after and decrease its size by scaling it to 0.0 and then we add hover effect to it using scale()*/
+        
+        .fancy-button{
+            padding: 10px;
+            font-size: 1.25rem;
+            font-family: 'Poppins';
+            background-color: #ee6352;
+            color: #fff;
+            border: none;
+            outline: none;
+            display: block;
+            margin:auto; 
+            margin-top: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            position: relative;
+        /*margin:auto centers the element inside the container,if container is inline it would take the minimum space required therefore there would be no space to align in center.*/
+        }
+        .fancy-button::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:rgba(0, 0, 0,0.5);
+            border-radius: 10px;
+            top:0; /*when position is absolute it will be relative to its parent therefore we marked .fancy-button as having relative position*/
+            left:0;
+            
+            /* transform:scale(0); */
+            /* transform-origin: bottom right; */
+            /* transform-origin: top; */
+            transform:scaleX(0.0);
+            transition: all 0.3s ease;
+
+        }
+        .fancy-button:hover::after{
+            transform:scaleX(1);
+            /* transform-origin:bottom ; */
+            background:rgba(0, 0, 0, 0.15);
+            /* transform-origin: top left; */ /*Transformation starts from the transform-origin.*/
+             /*here transform origin is used to state where will the element goes after hovering is done*/
+        }
+        .fancy-button:active{
+            transform:scale(1.5);
+        }
+        .card{
+            height:30px;
+            width: 500px;
+        }
+        .card h3{
+            cursor: pointer;
+            margin-left: 10px;
+            background: #ee6352;
+            color: #fff;
+            height: 30px;
+            border-bottom-right-radius:  5px;
+            border-top-right-radius:  5px;
+            
+        }
+        .card h3::after{
+            content:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio recusandae veniam sapiente praesentium unde dolorem necessitatibus perferendis quisquam doloribus.";
+            display: block;
+            background:#222335;
+            color: #fff;
+            width: 80%;
+            height:320%;/*percent means the height or width of an element in relation to its parent element, like here it means 100% the width of its parent element, parent of ::after is h3*/ 
+            padding: 5px;
+            font-size: 1rem;
+            border-bottom-left-radius:  5px;
+            border-bottom-right-radius:  5px;
+
+            transform-origin: top;
+            transform: scaleY(0.0);
+            transition: all 0.3s ease;
+        }
+    
+        .card h3:hover::after{
+            transform: scaleY(1.0); /*no need to add transition : all here because transition:all already covers all the states.*/
+            /* transform-origin: bottom; */
+        }
+    </style>
+</head>
+<body>
+    <h1>Fun Hover Effects</h1>
+    <a href="#" class="fancy-link">It works well with everything!</a>
+    <button class='fancy-button'>It works fine with me too!</button>
+
+    <div class="card">
+        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+    </div>
+</body>
+</html>

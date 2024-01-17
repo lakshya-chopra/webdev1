@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+html{
+    --primary-body-color:#12121f;
+    --primary-bg-color:#222227;
+    --primary-box-color:#167e56;
+}
+body{
+    font-family: 'Poppins';
+    display:flex;justify-content:center; align-items:center;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    background: var(--primary-body-color);
+    padding: 5px;
+}
+h2{
+    color: #fff;
+}
+.container{
+    width: auto;
+    min-height: 300px;
+    background:var(--primary-bg-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+.container .calendar{
+    width: 100%;
+    height: 100%;
+}
+.container .month{
+    position: relative;
+    margin-bottom: 15px;
+    width:100%;
+    padding: 20px;
+    background: var(--primary-box-color);
+}
+.container .month i{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.container .month i:nth-child(1){
+    left: 10%;
+}
+.container .month .fa-angle-right{
+    right: 10%;
+}
+.container .month i:hover{
+    color: #ffffff80;
+}
+.complete-date{
+    margin-top: 10px;
+}
+
+.dates{
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 10px;
+    padding: 20px;
+}
+.dates .date{
+    padding: 10px;
+    background:rgba(0,0,0,0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.dates .date:not(.date.todays-date):hover{
+    background: rgba(0,0,0,0.8);
+}
+.next-date{
+    opacity: 0.7;
+}
+.date.todays-date{
+    background: rgb(22, 126, 86);
+}
+.date.todays-date:hover{
+    background: rgba(22, 126, 86,0.5);
+}
+
+.btn{
+    font-family:'Poppins',Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 5px;
+    border: none;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-box-color);
+    color: #fff;
+}
+.btn.change-year{
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+
+@media(max-width:400px){
+    .calendar{
+        font-size: smaller;
+    }
+    .container .month{
+        padding: 10px;
+    }
+    .container .dates{
+        padding: 10px;
+    }
+    .container .dates .date{
+        padding: 5px;
+    }
+}
+@media(max-width:300px){
+    .calendar , .btn{
+        font-size: x-small;
+    }
+}
+@media(max-width:245px){
+    .calendar , .btn{
+        font-size: xx-small;
+    }
+}
+
+.date.disabled{
+    opacity: 0.4;
+}
+
+.date[disabled='true']{
+    pointer-events: none;
+    user-select: none;
+    cursor: not-allowed;
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f7f6ff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    margin: 16px;
+}
+
+.container {
+    margin-top: 100px;
+    padding: 32px;
+}
+
+.selected {
+    background: #2f3640;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    /* position: relative; */
+}
+
+.selected:after {
+    content: '';
+    background: url("arrow-down.svg");
+    background-size: contain;
+    position: absolute;
+    height: 100px;
+    width: 32px;
+    right: 40px;
+    top: 134px;
+    transition: all 0.3s ease;
+}
+
+.select-box .options-container {
+    display: flex;
+    /* width: 400px; */
+    background-color: #2f3640;
+    color: #f5f6fa;
+    width: 100%;
+    transition: all 0.4s;
+    border-radius: 8px;
+    overflow: hidden;
+    /* padding: 20px; */
+    flex-direction: column;
+    opacity: 0;
+    max-height: 240px;
+}
+
+.option {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.select-box .option,
+.selected {
+    padding: 12px 24px;
+    cursor: pointer
+}
+
+.select-box label {
+    cursor: pointer;
+}
+
+.select-box .option:hover {
+    background: #414b57;
+}
+
+.select-box .option .radio {
+    display: none;
+}
+
+.select-box .options-container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select-box.active2>.selected:after {
+    transform: rotateX(180deg);
+    top: 129px;
+}
+
+
+/* .options-container.active~.selected:after {
+    transform: rotateX(180deg);
+    top: 129px;
+} */
+
+
+/* Read this answer to understand: https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
+
+.options-container::-webkit-scrollbar {
+    width: 8px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+}
+
+.options-container::-webkit-scrollbar-thumb {
+    background: #525861;
+    border-radius: 0 8px 8px 0;
+}

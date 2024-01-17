@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal transitions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Dank Modal Transitions</h2>
+
+        <button class="btn" onclick="pro_modal_transition()">Pro transition</button>
+    </div>
+
+    <div class="modal">
+        <div class="modal-container">
+            <h2>Hello,bro!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta est quod, voluptas natus nostrum nulla in
+                facere doloremque autem magni corporis temporibus eaque ipsa excepturi inventore, exercitationem fuga
+                architecto unde iusto. Cupiditate, doloremque perferendis!</p>
+
+            <button class="btn close-btn" onclick="close_modal()">Close Dialog</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        const modal = document.querySelector('.modal')
+
+        function pro_modal_transition(){
+            modal.classList.toggle('pro')
+        }
+
+        function close_modal(){
+            modal.classList.remove('pro')
+        }
+
+    </script>
+
+</body>
+
+</html>
